@@ -1,0 +1,752 @@
+##############################################################################
+#                                                                            #
+# IAR Atmel AVR C/EC++ Compiler V3.20A/W32             19/Aug/2004  16:08:04 #
+# Copyright 1996-2004 IAR Systems. All rights reserved.                      #
+#                                                                            #
+#    Source file  =  Z:\qvcs\AVR318 Dallas 1-wire Communication              #
+#                    Interface\Source Code\IAR\polled\OWISWBitFunctions.c    #
+#    Command line =  --cpu=m32 -ms -o "Z:\qvcs\AVR318 Dallas 1-wire          #
+#                    Communication Interface\Source                          #
+#                    Code\IAR\polled\Debug\Obj\" -lC "Z:\qvcs\AVR318 Dallas  #
+#                    1-wire Communication Interface\Source                   #
+#                    Code\IAR\polled\Debug\List\" -lA "Z:\qvcs\AVR318        #
+#                    Dallas 1-wire Communication Interface\Source            #
+#                    Code\IAR\polled\Debug\List\" --initializers_in_flash    #
+#                    --root_variables -z2 --no_cse --no_inline               #
+#                    --no_code_motion --no_cross_call --no_clustering        #
+#                    --debug -DENABLE_BIT_DEFINITIONS -e -I "C:\Program      #
+#                    Files\IAR Systems\Embedded Workbench 3.2\avr\INC\" -I   #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench        #
+#                    3.2\avr\INC\CLIB\" --eeprom_size 1024 "Z:\qvcs\AVR318   #
+#                    Dallas 1-wire Communication Interface\Source            #
+#                    Code\IAR\polled\OWISWBitFunctions.c"                    #
+#    List file    =  Z:\qvcs\AVR318 Dallas 1-wire Communication              #
+#                    Interface\Source Code\IAR\polled\Debug\List\OWISWBitFun #
+#                    ctions.lst                                              #
+#    Object file  =  Z:\qvcs\AVR318 Dallas 1-wire Communication              #
+#                    Interface\Source Code\IAR\polled\Debug\Obj\OWISWBitFunc #
+#                    tions.r90                                               #
+#                                                                            #
+#                                                                            #
+##############################################################################
+
+Z:\qvcs\AVR318 Dallas 1-wire Communication Interface\Source Code\IAR\polled\OWISWBitFunctions.c
+      1          // This file has been prepared for Doxygen automatic documentation generation.
+      2          /*! \file ********************************************************************
+      3          *
+      4          * Atmel Corporation
+      5          *
+      6          * \li File:               OWISWBitFunctions.c
+      7          * \li Compiler:           IAR EWAAVR 3.20a
+      8          * \li Support mail:       avr@atmel.com
+      9          *
+     10          * \li Supported devices:  All AVRs.
+     11          *
+     12          * \li Application Note:   AVR318 - Dallas 1-Wire(R) master.
+     13          *                         
+     14          *
+     15          * \li Description:        Polled software only implementation of the basic 
+     16          *                         bit-level signalling in the 1-Wire(R) protocol.
+     17          *
+     18          *                         $Revision: 1.6 $
+     19          *                         $Date: Thursday, August 19, 2004 09:02:02 UTC $
+     20          ****************************************************************************/
+     21          
+     22          #include "OWIPolled.h"
+     23          
+     24          #ifdef OWI_SOFTWARE_DRIVER
+     25          
+     26          #include <ioavr.h>
+     27          #include <inavr.h>
+     28          
+     29          #include "OWIBitFunctions.h"
+     30          
+     31          
+     32          /*! \brief Initialization of the one wire bus(es). (Software only driver)
+     33           *  
+     34           *  This function initializes the 1-Wire bus(es) by releasing it and
+     35           *  waiting until any presence sinals are finished.
+     36           *
+     37           *  \param  pins    A bitmask of the buses to initialize.
+     38           */
+
+   \                                 In segment CODE, align 2, keep-with-next
+     39          void OWI_Init(unsigned char pins)
+   \                     OWI_Init:
+     40          {
+     41              OWI_RELEASE_BUS(pins);
+   \   00000000   2F10                       MOV     R17,R16
+   \   00000002   9510                       COM     R17
+   \   00000004   B321                       IN      R18,0x11
+   \   00000006   2321                       AND     R18,R17
+   \   00000008   BB21                       OUT     0x11,R18
+   \   0000000A   B312                       IN      R17,0x12
+   \   0000000C   2B10                       OR      R17,R16
+   \   0000000E   BB12                       OUT     0x12,R17
+     42              // The first rising edge can be interpreted by a slave as the end of a
+     43              // Reset pulse. Delay for the required reset recovery time (H) to be 
+     44              // sure that the real reset is interpreted correctly.
+     45              __delay_cycles(OWI_DELAY_H_STD_MODE);
+   \   00000010   EB2C                       LDI     R18,188
+   \   00000012   E033                       LDI     R19,3
+   \   00000014   5021                       SUBI    R18,1
+   \   00000016   4030                       SBCI    R19,0
+   \   00000018   F7E9                       BRNE    $-4
+   \   0000001A   C000                       RJMP    $+2
+     46          }
+   \   0000001C   9508                       RET
+     47          
+     48          
+     49          /*! \brief  Write a '1' bit to the bus(es). (Software only driver)
+     50           *
+     51           *  Generates the waveform for transmission of a '1' bit on the 1-Wire
+     52           *  bus.
+     53           *
+     54           *  \param  pins    A bitmask of the buses to write to.
+     55           */
+
+   \                                 In segment CODE, align 2, keep-with-next
+     56          void OWI_WriteBit1(unsigned char pins)
+   \                     OWI_WriteBit1:
+     57          {
+     58              unsigned char intState;
+     59              
+     60              // Disable interrupts.
+     61              intState = __save_interrupt();
+   \   00000000   B72F                       IN      R18,0x3F
+   \   00000002   2F12                       MOV     R17,R18
+     62              __disable_interrupt();
+   \   00000004   94F8                       CLI
+     63              
+     64              // Drive bus low and delay.
+     65              OWI_PULL_BUS_LOW(pins);
+   \   00000006   B321                       IN      R18,0x11
+   \   00000008   2B20                       OR      R18,R16
+   \   0000000A   BB21                       OUT     0x11,R18
+   \   0000000C   2F20                       MOV     R18,R16
+   \   0000000E   9520                       COM     R18
+   \   00000010   B332                       IN      R19,0x12
+   \   00000012   2332                       AND     R19,R18
+   \   00000014   BB32                       OUT     0x12,R19
+     66              __delay_cycles(OWI_DELAY_A_STD_MODE);
+   \   00000016   E02B                       LDI     R18,11
+   \   00000018   952A                       DEC     R18
+   \   0000001A   F7F1                       BRNE    $-2
+   \   0000001C   C000                       RJMP    $+2
+     67              
+     68              // Release bus and delay.
+     69              OWI_RELEASE_BUS(pins);
+   \   0000001E   2F20                       MOV     R18,R16
+   \   00000020   9520                       COM     R18
+   \   00000022   B331                       IN      R19,0x11
+   \   00000024   2332                       AND     R19,R18
+   \   00000026   BB31                       OUT     0x11,R19
+   \   00000028   B322                       IN      R18,0x12
+   \   0000002A   2B20                       OR      R18,R16
+   \   0000002C   BB22                       OUT     0x12,R18
+     70              __delay_cycles(OWI_DELAY_B_STD_MODE);
+   \   0000002E   EA26                       LDI     R18,166
+   \   00000030   952A                       DEC     R18
+   \   00000032   F7F1                       BRNE    $-2
+   \   00000034   0000                       NOP
+     71              
+     72              // Restore interrupts.
+     73              __restore_interrupt(intState);
+   \   00000036   BF1F                       OUT     0x3F,R17
+     74          }
+   \   00000038   9508                       RET
+     75          
+     76          
+     77          /*! \brief  Write a '0' to the bus(es). (Software only driver)
+     78           *
+     79           *  Generates the waveform for transmission of a '0' bit on the 1-Wire(R)
+     80           *  bus.
+     81           *
+     82           *  \param  pins    A bitmask of the buses to write to.
+     83           */
+
+   \                                 In segment CODE, align 2, keep-with-next
+     84          void OWI_WriteBit0(unsigned char pins)
+   \                     OWI_WriteBit0:
+     85          {
+     86              unsigned char intState;
+     87              
+     88              // Disable interrupts.
+     89              intState = __save_interrupt();
+   \   00000000   B72F                       IN      R18,0x3F
+   \   00000002   2F12                       MOV     R17,R18
+     90              __disable_interrupt();
+   \   00000004   94F8                       CLI
+     91              
+     92              // Drive bus low and delay.
+     93              OWI_PULL_BUS_LOW(pins);
+   \   00000006   B321                       IN      R18,0x11
+   \   00000008   2B20                       OR      R18,R16
+   \   0000000A   BB21                       OUT     0x11,R18
+   \   0000000C   2F20                       MOV     R18,R16
+   \   0000000E   9520                       COM     R18
+   \   00000010   B332                       IN      R19,0x12
+   \   00000012   2332                       AND     R19,R18
+   \   00000014   BB32                       OUT     0x12,R19
+     94              __delay_cycles(OWI_DELAY_C_STD_MODE);
+   \   00000016   E92B                       LDI     R18,155
+   \   00000018   952A                       DEC     R18
+   \   0000001A   F7F1                       BRNE    $-2
+   \   0000001C   C000                       RJMP    $+2
+     95              
+     96              // Release bus and delay.
+     97              OWI_RELEASE_BUS(pins);
+   \   0000001E   2F20                       MOV     R18,R16
+   \   00000020   9520                       COM     R18
+   \   00000022   B331                       IN      R19,0x11
+   \   00000024   2332                       AND     R19,R18
+   \   00000026   BB31                       OUT     0x11,R19
+   \   00000028   B322                       IN      R18,0x12
+   \   0000002A   2B20                       OR      R18,R16
+   \   0000002C   BB22                       OUT     0x12,R18
+     98              __delay_cycles(OWI_DELAY_D_STD_MODE);
+   \   0000002E   E126                       LDI     R18,22
+   \   00000030   952A                       DEC     R18
+   \   00000032   F7F1                       BRNE    $-2
+   \   00000034   0000                       NOP
+     99              
+    100              // Restore interrupts.
+    101              __restore_interrupt(intState);
+   \   00000036   BF1F                       OUT     0x3F,R17
+    102          }
+   \   00000038   9508                       RET
+    103          
+    104          
+    105          /*! \brief  Read a bit from the bus(es). (Software only driver)
+    106           *
+    107           *  Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).
+    108           *
+    109           *  \param  pins    A bitmask of the bus(es) to read from.
+    110           *
+    111           *  \return A bitmask of the buses where a '1' was read.
+    112           */
+
+   \                                 In segment CODE, align 2, keep-with-next
+    113          unsigned char OWI_ReadBit(unsigned char pins)
+   \                     OWI_ReadBit:
+    114          {
+   \   00000000   2F10                       MOV     R17,R16
+    115              unsigned char intState;
+    116              unsigned char bitsRead;
+    117              
+    118              // Disable interrupts.
+    119              intState = __save_interrupt();
+   \   00000002   B73F                       IN      R19,0x3F
+   \   00000004   2F23                       MOV     R18,R19
+    120              __disable_interrupt();
+   \   00000006   94F8                       CLI
+    121              
+    122              // Drive bus low and delay.
+    123              OWI_PULL_BUS_LOW(pins);
+   \   00000008   B331                       IN      R19,0x11
+   \   0000000A   2B31                       OR      R19,R17
+   \   0000000C   BB31                       OUT     0x11,R19
+   \   0000000E   2F31                       MOV     R19,R17
+   \   00000010   9530                       COM     R19
+   \   00000012   B342                       IN      R20,0x12
+   \   00000014   2343                       AND     R20,R19
+   \   00000016   BB42                       OUT     0x12,R20
+    124              __delay_cycles(OWI_DELAY_A_STD_MODE);
+   \   00000018   E03B                       LDI     R19,11
+   \   0000001A   953A                       DEC     R19
+   \   0000001C   F7F1                       BRNE    $-2
+   \   0000001E   C000                       RJMP    $+2
+    125              
+    126              // Release bus and delay.
+    127              OWI_RELEASE_BUS(pins);
+   \   00000020   2F31                       MOV     R19,R17
+   \   00000022   9530                       COM     R19
+   \   00000024   B341                       IN      R20,0x11
+   \   00000026   2343                       AND     R20,R19
+   \   00000028   BB41                       OUT     0x11,R20
+   \   0000002A   B332                       IN      R19,0x12
+   \   0000002C   2B31                       OR      R19,R17
+   \   0000002E   BB32                       OUT     0x12,R19
+    128              __delay_cycles(OWI_DELAY_E_STD_MODE);
+   \   00000030   E133                       LDI     R19,19
+   \   00000032   953A                       DEC     R19
+   \   00000034   F7F1                       BRNE    $-2
+   \   00000036   C000                       RJMP    $+2
+    129              
+    130              // Sample bus and delay.
+    131              bitsRead = OWI_PIN & pins;
+   \   00000038   B330                       IN      R19,0x10
+   \   0000003A   2331                       AND     R19,R17
+   \   0000003C   2F03                       MOV     R16,R19
+    132              __delay_cycles(OWI_DELAY_F_STD_MODE);
+   \   0000003E   E83E                       LDI     R19,142
+   \   00000040   953A                       DEC     R19
+   \   00000042   F7F1                       BRNE    $-2
+   \   00000044   0000                       NOP
+    133              
+    134              // Restore interrupts.
+    135              __restore_interrupt(intState);
+   \   00000046   BF2F                       OUT     0x3F,R18
+    136              
+    137              return bitsRead;
+   \   00000048   9508                       RET
+    138          }
+    139          
+    140          
+    141          /*! \brief  Send a Reset signal and listen for Presence signal. (software
+    142           *  only driver)
+    143           *
+    144           *  Generates the waveform for transmission of a Reset pulse on the 
+    145           *  1-Wire(R) bus and listens for presence signals.
+    146           *
+    147           *  \param  pins    A bitmask of the buses to send the Reset signal to.
+    148           *
+    149           *  \return A bitmask of the buses where a presence signal was detected.
+    150           */
+
+   \                                 In segment CODE, align 2, keep-with-next
+    151          unsigned char OWI_DetectPresence(unsigned char pins)
+   \                     OWI_DetectPresence:
+    152          {
+   \   00000000   2F10                       MOV     R17,R16
+    153              unsigned char intState;
+    154              unsigned char presenceDetected;
+    155              
+    156              // Disable interrupts.
+    157              intState = __save_interrupt();
+   \   00000002   B73F                       IN      R19,0x3F
+   \   00000004   2F23                       MOV     R18,R19
+    158              __disable_interrupt();
+   \   00000006   94F8                       CLI
+    159              
+    160              // Drive bus low and delay.
+    161              OWI_PULL_BUS_LOW(pins);
+   \   00000008   B331                       IN      R19,0x11
+   \   0000000A   2B31                       OR      R19,R17
+   \   0000000C   BB31                       OUT     0x11,R19
+   \   0000000E   2F31                       MOV     R19,R17
+   \   00000010   9530                       COM     R19
+   \   00000012   B342                       IN      R20,0x12
+   \   00000014   2343                       AND     R20,R19
+   \   00000016   BB42                       OUT     0x12,R20
+    162              __delay_cycles(OWI_DELAY_H_STD_MODE);
+   \   00000018   EB4C                       LDI     R20,188
+   \   0000001A   E053                       LDI     R21,3
+   \   0000001C   5041                       SUBI    R20,1
+   \   0000001E   4050                       SBCI    R21,0
+   \   00000020   F7E9                       BRNE    $-4
+   \   00000022   C000                       RJMP    $+2
+    163              
+    164              // Release bus and delay.
+    165              OWI_RELEASE_BUS(pins);
+   \   00000024   2F31                       MOV     R19,R17
+   \   00000026   9530                       COM     R19
+   \   00000028   B341                       IN      R20,0x11
+   \   0000002A   2343                       AND     R20,R19
+   \   0000002C   BB41                       OUT     0x11,R20
+   \   0000002E   B332                       IN      R19,0x12
+   \   00000030   2B31                       OR      R19,R17
+   \   00000032   BB32                       OUT     0x12,R19
+    166              __delay_cycles(OWI_DELAY_I_STD_MODE);
+   \   00000034   EB36                       LDI     R19,182
+   \   00000036   953A                       DEC     R19
+   \   00000038   F7F1                       BRNE    $-2
+   \   0000003A   0000                       NOP
+    167              
+    168              // Sample bus to detect presence signal and delay.
+    169              presenceDetected = ((~OWI_PIN) & pins);
+   \   0000003C   B330                       IN      R19,0x10
+   \   0000003E   9530                       COM     R19
+   \   00000040   2331                       AND     R19,R17
+   \   00000042   2F03                       MOV     R16,R19
+    170              __delay_cycles(OWI_DELAY_J_STD_MODE);
+   \   00000044   E340                       LDI     R20,48
+   \   00000046   E053                       LDI     R21,3
+   \   00000048   5041                       SUBI    R20,1
+   \   0000004A   4050                       SBCI    R21,0
+   \   0000004C   F7E9                       BRNE    $-4
+   \   0000004E   C000                       RJMP    $+2
+    171              
+    172              // Restore interrupts.
+    173              __restore_interrupt(intState);
+   \   00000050   BF2F                       OUT     0x3F,R18
+    174              
+    175              return presenceDetected;
+   \   00000052   9508                       RET
+    176          }
+
+   \                                 In segment ABSOLUTE, at 0x3e, root
+   \   union <unnamed> volatile __io _A_EEAR
+   \                     _A_EEAR:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x40, root
+   \   union <unnamed> volatile __io _A_UBRRH
+   \                     _A_UBRRH:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x41, root
+   \   union <unnamed> volatile __io _A_WDTCR
+   \                     _A_WDTCR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x42, root
+   \   union <unnamed> volatile __io _A_ASSR
+   \                     _A_ASSR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x43, root
+   \   union <unnamed> volatile __io _A_OCR2
+   \                     _A_OCR2:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x44, root
+   \   union <unnamed> volatile __io _A_TCNT2
+   \                     _A_TCNT2:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x45, root
+   \   union <unnamed> volatile __io _A_TCCR2
+   \                     _A_TCCR2:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x46, root
+   \   union <unnamed> volatile __io _A_ICR1
+   \                     _A_ICR1:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x48, root
+   \   union <unnamed> volatile __io _A_OCR1B
+   \                     _A_OCR1B:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x4a, root
+   \   union <unnamed> volatile __io _A_OCR1A
+   \                     _A_OCR1A:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x4c, root
+   \   union <unnamed> volatile __io _A_TCNT1
+   \                     _A_TCNT1:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x4e, root
+   \   union <unnamed> volatile __io _A_TCCR1B
+   \                     _A_TCCR1B:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x4f, root
+   \   union <unnamed> volatile __io _A_TCCR1A
+   \                     _A_TCCR1A:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x50, root
+   \   union <unnamed> volatile __io _A_SFIOR
+   \                     _A_SFIOR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x51, root
+   \   union <unnamed> volatile __io _A_OSCCAL
+   \                     _A_OSCCAL:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x52, root
+   \   union <unnamed> volatile __io _A_TCNT0
+   \                     _A_TCNT0:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x53, root
+   \   union <unnamed> volatile __io _A_TCCR0
+   \                     _A_TCCR0:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x54, root
+   \   union <unnamed> volatile __io _A_MCUCSR
+   \                     _A_MCUCSR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x55, root
+   \   union <unnamed> volatile __io _A_MCUCR
+   \                     _A_MCUCR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x56, root
+   \   union <unnamed> volatile __io _A_TWCR
+   \                     _A_TWCR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x57, root
+   \   union <unnamed> volatile __io _A_SPMCR
+   \                     _A_SPMCR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x58, root
+   \   union <unnamed> volatile __io _A_TIFR
+   \                     _A_TIFR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x59, root
+   \   union <unnamed> volatile __io _A_TIMSK
+   \                     _A_TIMSK:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x5a, root
+   \   union <unnamed> volatile __io _A_GIFR
+   \                     _A_GIFR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x5b, root
+   \   union <unnamed> volatile __io _A_GICR
+   \                     _A_GICR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x5c, root
+   \   union <unnamed> volatile __io _A_OCR0
+   \                     _A_OCR0:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x5d, root
+   \   union <unnamed> volatile __io _A_SP
+   \                     _A_SP:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x5f, root
+   \   union <unnamed> volatile __io _A_SREG
+   \                     _A_SREG:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x20, root
+   \   union <unnamed> volatile __io _A_TWBR
+   \                     _A_TWBR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x21, root
+   \   union <unnamed> volatile __io _A_TWSR
+   \                     _A_TWSR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x22, root
+   \   union <unnamed> volatile __io _A_TWAR
+   \                     _A_TWAR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x23, root
+   \   union <unnamed> volatile __io _A_TWDR
+   \                     _A_TWDR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x24, root
+   \   union <unnamed> volatile __io _A_ADC
+   \                     _A_ADC:
+   \   00000000                              DS 2
+
+   \                                 In segment ABSOLUTE, at 0x26, root
+   \   union <unnamed> volatile __io _A_ADCSRA
+   \                     _A_ADCSRA:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x27, root
+   \   union <unnamed> volatile __io _A_ADMUX
+   \                     _A_ADMUX:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x28, root
+   \   union <unnamed> volatile __io _A_ACSR
+   \                     _A_ACSR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x29, root
+   \   union <unnamed> volatile __io _A_UBRRL
+   \                     _A_UBRRL:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2a, root
+   \   union <unnamed> volatile __io _A_UCSRB
+   \                     _A_UCSRB:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2b, root
+   \   union <unnamed> volatile __io _A_UCSRA
+   \                     _A_UCSRA:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2c, root
+   \   union <unnamed> volatile __io _A_UDR
+   \                     _A_UDR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2d, root
+   \   union <unnamed> volatile __io _A_SPCR
+   \                     _A_SPCR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2e, root
+   \   union <unnamed> volatile __io _A_SPSR
+   \                     _A_SPSR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x2f, root
+   \   union <unnamed> volatile __io _A_SPDR
+   \                     _A_SPDR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x30, root
+   \   union <unnamed> volatile __io _A_PIND
+   \                     _A_PIND:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x31, root
+   \   union <unnamed> volatile __io _A_DDRD
+   \                     _A_DDRD:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x32, root
+   \   union <unnamed> volatile __io _A_PORTD
+   \                     _A_PORTD:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x33, root
+   \   union <unnamed> volatile __io _A_PINC
+   \                     _A_PINC:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x34, root
+   \   union <unnamed> volatile __io _A_DDRC
+   \                     _A_DDRC:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x35, root
+   \   union <unnamed> volatile __io _A_PORTC
+   \                     _A_PORTC:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x36, root
+   \   union <unnamed> volatile __io _A_PINB
+   \                     _A_PINB:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x37, root
+   \   union <unnamed> volatile __io _A_DDRB
+   \                     _A_DDRB:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x38, root
+   \   union <unnamed> volatile __io _A_PORTB
+   \                     _A_PORTB:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x39, root
+   \   union <unnamed> volatile __io _A_PINA
+   \                     _A_PINA:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x3a, root
+   \   union <unnamed> volatile __io _A_DDRA
+   \                     _A_DDRA:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x3b, root
+   \   union <unnamed> volatile __io _A_PORTA
+   \                     _A_PORTA:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x3c, root
+   \   union <unnamed> volatile __io _A_EECR
+   \                     _A_EECR:
+   \   00000000                              DS 1
+
+   \                                 In segment ABSOLUTE, at 0x3d, root
+   \   union <unnamed> volatile __io _A_EEDR
+   \                     _A_EEDR:
+   \   00000000                              DS 1
+    177          
+    178          
+    179          #endif
+
+   Maximum stack usage in bytes:
+
+     Function           CSTACK RSTACK
+     --------           ------ ------
+     OWI_DetectPresence     0      2
+     OWI_Init               0      2
+     OWI_ReadBit            0      2
+     OWI_WriteBit0          0      2
+     OWI_WriteBit1          0      2
+
+
+   Segment part sizes:
+
+     Function/Label     Bytes
+     --------------     -----
+     OWI_Init             30
+     OWI_WriteBit1        58
+     OWI_WriteBit0        58
+     OWI_ReadBit          74
+     OWI_DetectPresence   84
+     _A_EEAR               2
+     _A_UBRRH              1
+     _A_WDTCR              1
+     _A_ASSR               1
+     _A_OCR2               1
+     _A_TCNT2              1
+     _A_TCCR2              1
+     _A_ICR1               2
+     _A_OCR1B              2
+     _A_OCR1A              2
+     _A_TCNT1              2
+     _A_TCCR1B             1
+     _A_TCCR1A             1
+     _A_SFIOR              1
+     _A_OSCCAL             1
+     _A_TCNT0              1
+     _A_TCCR0              1
+     _A_MCUCSR             1
+     _A_MCUCR              1
+     _A_TWCR               1
+     _A_SPMCR              1
+     _A_TIFR               1
+     _A_TIMSK              1
+     _A_GIFR               1
+     _A_GICR               1
+     _A_OCR0               1
+     _A_SP                 2
+     _A_SREG               1
+     _A_TWBR               1
+     _A_TWSR               1
+     _A_TWAR               1
+     _A_TWDR               1
+     _A_ADC                2
+     _A_ADCSRA             1
+     _A_ADMUX              1
+     _A_ACSR               1
+     _A_UBRRL              1
+     _A_UCSRB              1
+     _A_UCSRA              1
+     _A_UDR                1
+     _A_SPCR               1
+     _A_SPSR               1
+     _A_SPDR               1
+     _A_PIND               1
+     _A_DDRD               1
+     _A_PORTD              1
+     _A_PINC               1
+     _A_DDRC               1
+     _A_PORTC              1
+     _A_PINB               1
+     _A_DDRB               1
+     _A_PORTB              1
+     _A_PINA               1
+     _A_DDRA               1
+     _A_PORTA              1
+     _A_EECR               1
+     _A_EEDR               1
+
+ 
+  64 bytes in segment ABSOLUTE
+ 304 bytes in segment CODE
+ 
+ 304 bytes of CODE memory
+   0 bytes of DATA memory (+ 64 bytes shared)
+
+Errors: none
+Warnings: none

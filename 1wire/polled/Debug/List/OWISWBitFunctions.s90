@@ -1,0 +1,850 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                           /
+// IAR Atmel AVR C/EC++ Compiler V3.20A/W32            19/Aug/2004  16:08:04 /
+// Copyright 1996-2004 IAR Systems. All rights reserved.                     /
+//                                                                           /
+//    Source file  =  Z:\qvcs\AVR318 Dallas 1-wire Communication             /
+//                    Interface\Source Code\IAR\polled\OWISWBitFunctions.c   /
+//    Command line =  --cpu=m32 -ms -o "Z:\qvcs\AVR318 Dallas 1-wire         /
+//                    Communication Interface\Source                         /
+//                    Code\IAR\polled\Debug\Obj\" -lC "Z:\qvcs\AVR318        /
+//                    Dallas 1-wire Communication Interface\Source           /
+//                    Code\IAR\polled\Debug\List\" -lA "Z:\qvcs\AVR318       /
+//                    Dallas 1-wire Communication Interface\Source           /
+//                    Code\IAR\polled\Debug\List\" --initializers_in_flash   /
+//                    --root_variables -z2 --no_cse --no_inline              /
+//                    --no_code_motion --no_cross_call --no_clustering       /
+//                    --debug -DENABLE_BIT_DEFINITIONS -e -I "C:\Program     /
+//                    Files\IAR Systems\Embedded Workbench 3.2\avr\INC\" -I  /
+//                    "C:\Program Files\IAR Systems\Embedded Workbench       /
+//                    3.2\avr\INC\CLIB\" --eeprom_size 1024 "Z:\qvcs\AVR318  /
+//                    Dallas 1-wire Communication Interface\Source           /
+//                    Code\IAR\polled\OWISWBitFunctions.c"                   /
+//    List file    =  Z:\qvcs\AVR318 Dallas 1-wire Communication             /
+//                    Interface\Source Code\IAR\polled\Debug\List\OWISWBitFu /
+//                    nctions.s90                                            /
+//                                                                           /
+//                                                                           /
+//////////////////////////////////////////////////////////////////////////////
+
+        NAME OWISWBitFunctions
+
+        RTMODEL "__64bit_doubles", "disabled"
+        RTMODEL "__cpu", "3"
+        RTMODEL "__cpu_name", "ATmega32"
+        RTMODEL "__enhanced_core", "enabled"
+        RTMODEL "__has_elpm", "false"
+        RTMODEL "__memory_model", "2"
+        RTMODEL "__rt_version", "3"
+
+        RSEG CSTACK:DATA:NOROOT(0)
+        RSEG RSTACK:DATA:NOROOT(0)
+
+        PUBLIC OWI_DetectPresence
+        FUNCTION OWI_DetectPresence,0203H
+        LOCFRAME RSTACK, 2, STACK
+        PUBLIC OWI_Init
+        FUNCTION OWI_Init,0203H
+        LOCFRAME RSTACK, 2, STACK
+        PUBLIC OWI_ReadBit
+        FUNCTION OWI_ReadBit,0203H
+        LOCFRAME RSTACK, 2, STACK
+        PUBLIC OWI_WriteBit0
+        FUNCTION OWI_WriteBit0,0203H
+        LOCFRAME RSTACK, 2, STACK
+        PUBLIC OWI_WriteBit1
+        FUNCTION OWI_WriteBit1,0203H
+        LOCFRAME RSTACK, 2, STACK
+        PUBWEAK _A_ACSR
+        PUBWEAK _A_ADC
+        PUBWEAK _A_ADCSRA
+        PUBWEAK _A_ADMUX
+        PUBWEAK _A_ASSR
+        PUBWEAK _A_DDRA
+        PUBWEAK _A_DDRB
+        PUBWEAK _A_DDRC
+        PUBWEAK _A_DDRD
+        PUBWEAK _A_EEAR
+        PUBWEAK _A_EECR
+        PUBWEAK _A_EEDR
+        PUBWEAK _A_GICR
+        PUBWEAK _A_GIFR
+        PUBWEAK _A_ICR1
+        PUBWEAK _A_MCUCR
+        PUBWEAK _A_MCUCSR
+        PUBWEAK _A_OCR0
+        PUBWEAK _A_OCR1A
+        PUBWEAK _A_OCR1B
+        PUBWEAK _A_OCR2
+        PUBWEAK _A_OSCCAL
+        PUBWEAK _A_PINA
+        PUBWEAK _A_PINB
+        PUBWEAK _A_PINC
+        PUBWEAK _A_PIND
+        PUBWEAK _A_PORTA
+        PUBWEAK _A_PORTB
+        PUBWEAK _A_PORTC
+        PUBWEAK _A_PORTD
+        PUBWEAK _A_SFIOR
+        PUBWEAK _A_SP
+        PUBWEAK _A_SPCR
+        PUBWEAK _A_SPDR
+        PUBWEAK _A_SPMCR
+        PUBWEAK _A_SPSR
+        PUBWEAK _A_SREG
+        PUBWEAK _A_TCCR0
+        PUBWEAK _A_TCCR1A
+        PUBWEAK _A_TCCR1B
+        PUBWEAK _A_TCCR2
+        PUBWEAK _A_TCNT0
+        PUBWEAK _A_TCNT1
+        PUBWEAK _A_TCNT2
+        PUBWEAK _A_TIFR
+        PUBWEAK _A_TIMSK
+        PUBWEAK _A_TWAR
+        PUBWEAK _A_TWBR
+        PUBWEAK _A_TWCR
+        PUBWEAK _A_TWDR
+        PUBWEAK _A_TWSR
+        PUBWEAK _A_UBRRH
+        PUBWEAK _A_UBRRL
+        PUBWEAK _A_UCSRA
+        PUBWEAK _A_UCSRB
+        PUBWEAK _A_UDR
+        PUBWEAK _A_WDTCR
+        PUBWEAK __?EEARH
+        PUBWEAK __?EEARL
+        PUBWEAK __?EECR
+        PUBWEAK __?EEDR
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_Y Y DATA
+        CFI StackFrame CFA_SP SP DATA
+        CFI VirtualResource ?RetPad:1, ?RetHigh:8, ?RetLow:8, ?Ret:17
+        CFI Resource R0:8, R1:8, R2:8, R3:8, R4:8, R5:8, R6:8, R7:8, R8:8, R9:8
+        CFI Resource R10:8, R11:8, R12:8, R13:8, R14:8, R15:8, R16:8, R17:8
+        CFI Resource R18:8, R19:8, R20:8, R21:8, R22:8, R23:8, R24:8, R25:8
+        CFI Resource R26:8, R27:8, R28:8, R29:8, R30:8, R31:8
+        CFI Resource ?RetHighByteMask:8, SP:16, SPH:8, SPL:8, Y:16
+        CFI ResourceParts ?Ret ?RetHigh, ?RetLow, ?RetPad
+        CFI ResourceParts SP SPH, SPL
+        CFI ResourceParts Y R29, R28
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign 1
+        CFI ReturnAddress ?Ret CODE
+        CFI CFA_Y Y+0
+        CFI CFA_SP SP+2
+        CFI ?RetPad 0
+        CFI ?RetHigh and(load(1, DATA, sub(CFA_SP, 1)), ?RetHighByteMask)
+        CFI ?RetLow Frame(CFA_SP, 0)
+        CFI ?Ret Concat
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI R8 SameValue
+        CFI R9 SameValue
+        CFI R10 SameValue
+        CFI R11 SameValue
+        CFI R12 SameValue
+        CFI R13 SameValue
+        CFI R14 SameValue
+        CFI R15 SameValue
+        CFI R16 Undefined
+        CFI R17 Undefined
+        CFI R18 Undefined
+        CFI R19 Undefined
+        CFI R20 Undefined
+        CFI R21 Undefined
+        CFI R22 Undefined
+        CFI R23 Undefined
+        CFI R24 SameValue
+        CFI R25 SameValue
+        CFI R26 SameValue
+        CFI R27 SameValue
+        CFI R28 Undefined
+        CFI R29 Undefined
+        CFI R30 Undefined
+        CFI R31 Undefined
+        CFI ?RetHighByteMask SameValue
+        CFI SPH Undefined
+        CFI SPL Undefined
+        CFI EndCommon cfiCommon0
+        
+// Z:\qvcs\AVR318 Dallas 1-wire Communication Interface\Source Code\IAR\polled\OWISWBitFunctions.c
+//    1 // This file has been prepared for Doxygen automatic documentation generation.
+//    2 /*! \file ********************************************************************
+//    3 *
+//    4 * Atmel Corporation
+//    5 *
+//    6 * \li File:               OWISWBitFunctions.c
+//    7 * \li Compiler:           IAR EWAAVR 3.20a
+//    8 * \li Support mail:       avr@atmel.com
+//    9 *
+//   10 * \li Supported devices:  All AVRs.
+//   11 *
+//   12 * \li Application Note:   AVR318 - Dallas 1-Wire(R) master.
+//   13 *                         
+//   14 *
+//   15 * \li Description:        Polled software only implementation of the basic 
+//   16 *                         bit-level signalling in the 1-Wire(R) protocol.
+//   17 *
+//   18 *                         $Revision: 1.6 $
+//   19 *                         $Date: Thursday, August 19, 2004 09:02:02 UTC $
+//   20 ****************************************************************************/
+//   21 
+//   22 #include "OWIPolled.h"
+//   23 
+//   24 #ifdef OWI_SOFTWARE_DRIVER
+//   25 
+//   26 #include <ioavr.h>
+//   27 #include <inavr.h>
+//   28 
+//   29 #include "OWIBitFunctions.h"
+//   30 
+//   31 
+//   32 /*! \brief Initialization of the one wire bus(es). (Software only driver)
+//   33  *  
+//   34  *  This function initializes the 1-Wire bus(es) by releasing it and
+//   35  *  waiting until any presence sinals are finished.
+//   36  *
+//   37  *  \param  pins    A bitmask of the buses to initialize.
+//   38  */
+
+        RSEG CODE:CODE:NOROOT(1)
+//   39 void OWI_Init(unsigned char pins)
+OWI_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function OWI_Init
+//   40 {
+//   41     OWI_RELEASE_BUS(pins);
+	MOV	R17,R16
+	COM	R17
+	IN	R18,0x11
+	AND	R18,R17
+	OUT	0x11,R18
+	IN	R17,0x12
+	OR	R17,R16
+	OUT	0x12,R17
+//   42     // The first rising edge can be interpreted by a slave as the end of a
+//   43     // Reset pulse. Delay for the required reset recovery time (H) to be 
+//   44     // sure that the real reset is interpreted correctly.
+//   45     __delay_cycles(OWI_DELAY_H_STD_MODE);
+	LDI	R18,188
+	LDI	R19,3
+	SUBI	R18,1
+	SBCI	R19,0
+	BRNE	$-4
+	RJMP	$+2
+//   46 }
+	RET
+        CFI EndBlock cfiBlock0
+//   47 
+//   48 
+//   49 /*! \brief  Write a '1' bit to the bus(es). (Software only driver)
+//   50  *
+//   51  *  Generates the waveform for transmission of a '1' bit on the 1-Wire
+//   52  *  bus.
+//   53  *
+//   54  *  \param  pins    A bitmask of the buses to write to.
+//   55  */
+
+        RSEG CODE:CODE:NOROOT(1)
+//   56 void OWI_WriteBit1(unsigned char pins)
+OWI_WriteBit1:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function OWI_WriteBit1
+//   57 {
+//   58     unsigned char intState;
+//   59     
+//   60     // Disable interrupts.
+//   61     intState = __save_interrupt();
+	IN	R18,0x3F
+	MOV	R17,R18
+//   62     __disable_interrupt();
+	CLI
+//   63     
+//   64     // Drive bus low and delay.
+//   65     OWI_PULL_BUS_LOW(pins);
+	IN	R18,0x11
+	OR	R18,R16
+	OUT	0x11,R18
+	MOV	R18,R16
+	COM	R18
+	IN	R19,0x12
+	AND	R19,R18
+	OUT	0x12,R19
+//   66     __delay_cycles(OWI_DELAY_A_STD_MODE);
+	LDI	R18,11
+	DEC	R18
+	BRNE	$-2
+	RJMP	$+2
+//   67     
+//   68     // Release bus and delay.
+//   69     OWI_RELEASE_BUS(pins);
+	MOV	R18,R16
+	COM	R18
+	IN	R19,0x11
+	AND	R19,R18
+	OUT	0x11,R19
+	IN	R18,0x12
+	OR	R18,R16
+	OUT	0x12,R18
+//   70     __delay_cycles(OWI_DELAY_B_STD_MODE);
+	LDI	R18,166
+	DEC	R18
+	BRNE	$-2
+	NOP
+//   71     
+//   72     // Restore interrupts.
+//   73     __restore_interrupt(intState);
+	OUT	0x3F,R17
+//   74 }
+	RET
+        CFI EndBlock cfiBlock1
+//   75 
+//   76 
+//   77 /*! \brief  Write a '0' to the bus(es). (Software only driver)
+//   78  *
+//   79  *  Generates the waveform for transmission of a '0' bit on the 1-Wire(R)
+//   80  *  bus.
+//   81  *
+//   82  *  \param  pins    A bitmask of the buses to write to.
+//   83  */
+
+        RSEG CODE:CODE:NOROOT(1)
+//   84 void OWI_WriteBit0(unsigned char pins)
+OWI_WriteBit0:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function OWI_WriteBit0
+//   85 {
+//   86     unsigned char intState;
+//   87     
+//   88     // Disable interrupts.
+//   89     intState = __save_interrupt();
+	IN	R18,0x3F
+	MOV	R17,R18
+//   90     __disable_interrupt();
+	CLI
+//   91     
+//   92     // Drive bus low and delay.
+//   93     OWI_PULL_BUS_LOW(pins);
+	IN	R18,0x11
+	OR	R18,R16
+	OUT	0x11,R18
+	MOV	R18,R16
+	COM	R18
+	IN	R19,0x12
+	AND	R19,R18
+	OUT	0x12,R19
+//   94     __delay_cycles(OWI_DELAY_C_STD_MODE);
+	LDI	R18,155
+	DEC	R18
+	BRNE	$-2
+	RJMP	$+2
+//   95     
+//   96     // Release bus and delay.
+//   97     OWI_RELEASE_BUS(pins);
+	MOV	R18,R16
+	COM	R18
+	IN	R19,0x11
+	AND	R19,R18
+	OUT	0x11,R19
+	IN	R18,0x12
+	OR	R18,R16
+	OUT	0x12,R18
+//   98     __delay_cycles(OWI_DELAY_D_STD_MODE);
+	LDI	R18,22
+	DEC	R18
+	BRNE	$-2
+	NOP
+//   99     
+//  100     // Restore interrupts.
+//  101     __restore_interrupt(intState);
+	OUT	0x3F,R17
+//  102 }
+	RET
+        CFI EndBlock cfiBlock2
+//  103 
+//  104 
+//  105 /*! \brief  Read a bit from the bus(es). (Software only driver)
+//  106  *
+//  107  *  Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).
+//  108  *
+//  109  *  \param  pins    A bitmask of the bus(es) to read from.
+//  110  *
+//  111  *  \return A bitmask of the buses where a '1' was read.
+//  112  */
+
+        RSEG CODE:CODE:NOROOT(1)
+//  113 unsigned char OWI_ReadBit(unsigned char pins)
+OWI_ReadBit:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function OWI_ReadBit
+//  114 {
+	MOV	R17,R16
+//  115     unsigned char intState;
+//  116     unsigned char bitsRead;
+//  117     
+//  118     // Disable interrupts.
+//  119     intState = __save_interrupt();
+	IN	R19,0x3F
+	MOV	R18,R19
+//  120     __disable_interrupt();
+	CLI
+//  121     
+//  122     // Drive bus low and delay.
+//  123     OWI_PULL_BUS_LOW(pins);
+	IN	R19,0x11
+	OR	R19,R17
+	OUT	0x11,R19
+	MOV	R19,R17
+	COM	R19
+	IN	R20,0x12
+	AND	R20,R19
+	OUT	0x12,R20
+//  124     __delay_cycles(OWI_DELAY_A_STD_MODE);
+	LDI	R19,11
+	DEC	R19
+	BRNE	$-2
+	RJMP	$+2
+//  125     
+//  126     // Release bus and delay.
+//  127     OWI_RELEASE_BUS(pins);
+	MOV	R19,R17
+	COM	R19
+	IN	R20,0x11
+	AND	R20,R19
+	OUT	0x11,R20
+	IN	R19,0x12
+	OR	R19,R17
+	OUT	0x12,R19
+//  128     __delay_cycles(OWI_DELAY_E_STD_MODE);
+	LDI	R19,19
+	DEC	R19
+	BRNE	$-2
+	RJMP	$+2
+//  129     
+//  130     // Sample bus and delay.
+//  131     bitsRead = OWI_PIN & pins;
+	IN	R19,0x10
+	AND	R19,R17
+	MOV	R16,R19
+//  132     __delay_cycles(OWI_DELAY_F_STD_MODE);
+	LDI	R19,142
+	DEC	R19
+	BRNE	$-2
+	NOP
+//  133     
+//  134     // Restore interrupts.
+//  135     __restore_interrupt(intState);
+	OUT	0x3F,R18
+//  136     
+//  137     return bitsRead;
+	RET
+        CFI EndBlock cfiBlock3
+//  138 }
+//  139 
+//  140 
+//  141 /*! \brief  Send a Reset signal and listen for Presence signal. (software
+//  142  *  only driver)
+//  143  *
+//  144  *  Generates the waveform for transmission of a Reset pulse on the 
+//  145  *  1-Wire(R) bus and listens for presence signals.
+//  146  *
+//  147  *  \param  pins    A bitmask of the buses to send the Reset signal to.
+//  148  *
+//  149  *  \return A bitmask of the buses where a presence signal was detected.
+//  150  */
+
+        RSEG CODE:CODE:NOROOT(1)
+//  151 unsigned char OWI_DetectPresence(unsigned char pins)
+OWI_DetectPresence:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function OWI_DetectPresence
+//  152 {
+	MOV	R17,R16
+//  153     unsigned char intState;
+//  154     unsigned char presenceDetected;
+//  155     
+//  156     // Disable interrupts.
+//  157     intState = __save_interrupt();
+	IN	R19,0x3F
+	MOV	R18,R19
+//  158     __disable_interrupt();
+	CLI
+//  159     
+//  160     // Drive bus low and delay.
+//  161     OWI_PULL_BUS_LOW(pins);
+	IN	R19,0x11
+	OR	R19,R17
+	OUT	0x11,R19
+	MOV	R19,R17
+	COM	R19
+	IN	R20,0x12
+	AND	R20,R19
+	OUT	0x12,R20
+//  162     __delay_cycles(OWI_DELAY_H_STD_MODE);
+	LDI	R20,188
+	LDI	R21,3
+	SUBI	R20,1
+	SBCI	R21,0
+	BRNE	$-4
+	RJMP	$+2
+//  163     
+//  164     // Release bus and delay.
+//  165     OWI_RELEASE_BUS(pins);
+	MOV	R19,R17
+	COM	R19
+	IN	R20,0x11
+	AND	R20,R19
+	OUT	0x11,R20
+	IN	R19,0x12
+	OR	R19,R17
+	OUT	0x12,R19
+//  166     __delay_cycles(OWI_DELAY_I_STD_MODE);
+	LDI	R19,182
+	DEC	R19
+	BRNE	$-2
+	NOP
+//  167     
+//  168     // Sample bus to detect presence signal and delay.
+//  169     presenceDetected = ((~OWI_PIN) & pins);
+	IN	R19,0x10
+	COM	R19
+	AND	R19,R17
+	MOV	R16,R19
+//  170     __delay_cycles(OWI_DELAY_J_STD_MODE);
+	LDI	R20,48
+	LDI	R21,3
+	SUBI	R20,1
+	SBCI	R21,0
+	BRNE	$-4
+	RJMP	$+2
+//  171     
+//  172     // Restore interrupts.
+//  173     __restore_interrupt(intState);
+	OUT	0x3F,R18
+//  174     
+//  175     return presenceDetected;
+	RET
+        CFI EndBlock cfiBlock4
+//  176 }
+
+        ASEGN ABSOLUTE:DATA:ROOT,03eH
+// union <unnamed> volatile __io _A_EEAR
+_A_EEAR:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,040H
+// union <unnamed> volatile __io _A_UBRRH
+_A_UBRRH:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,041H
+// union <unnamed> volatile __io _A_WDTCR
+_A_WDTCR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,042H
+// union <unnamed> volatile __io _A_ASSR
+_A_ASSR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,043H
+// union <unnamed> volatile __io _A_OCR2
+_A_OCR2:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,044H
+// union <unnamed> volatile __io _A_TCNT2
+_A_TCNT2:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,045H
+// union <unnamed> volatile __io _A_TCCR2
+_A_TCCR2:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,046H
+// union <unnamed> volatile __io _A_ICR1
+_A_ICR1:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,048H
+// union <unnamed> volatile __io _A_OCR1B
+_A_OCR1B:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,04aH
+// union <unnamed> volatile __io _A_OCR1A
+_A_OCR1A:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,04cH
+// union <unnamed> volatile __io _A_TCNT1
+_A_TCNT1:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,04eH
+// union <unnamed> volatile __io _A_TCCR1B
+_A_TCCR1B:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,04fH
+// union <unnamed> volatile __io _A_TCCR1A
+_A_TCCR1A:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,050H
+// union <unnamed> volatile __io _A_SFIOR
+_A_SFIOR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,051H
+// union <unnamed> volatile __io _A_OSCCAL
+_A_OSCCAL:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,052H
+// union <unnamed> volatile __io _A_TCNT0
+_A_TCNT0:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,053H
+// union <unnamed> volatile __io _A_TCCR0
+_A_TCCR0:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,054H
+// union <unnamed> volatile __io _A_MCUCSR
+_A_MCUCSR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,055H
+// union <unnamed> volatile __io _A_MCUCR
+_A_MCUCR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,056H
+// union <unnamed> volatile __io _A_TWCR
+_A_TWCR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,057H
+// union <unnamed> volatile __io _A_SPMCR
+_A_SPMCR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,058H
+// union <unnamed> volatile __io _A_TIFR
+_A_TIFR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,059H
+// union <unnamed> volatile __io _A_TIMSK
+_A_TIMSK:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,05aH
+// union <unnamed> volatile __io _A_GIFR
+_A_GIFR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,05bH
+// union <unnamed> volatile __io _A_GICR
+_A_GICR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,05cH
+// union <unnamed> volatile __io _A_OCR0
+_A_OCR0:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,05dH
+// union <unnamed> volatile __io _A_SP
+_A_SP:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,05fH
+// union <unnamed> volatile __io _A_SREG
+_A_SREG:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,020H
+// union <unnamed> volatile __io _A_TWBR
+_A_TWBR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,021H
+// union <unnamed> volatile __io _A_TWSR
+_A_TWSR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,022H
+// union <unnamed> volatile __io _A_TWAR
+_A_TWAR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,023H
+// union <unnamed> volatile __io _A_TWDR
+_A_TWDR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,024H
+// union <unnamed> volatile __io _A_ADC
+_A_ADC:
+        DS 2
+
+        ASEGN ABSOLUTE:DATA:ROOT,026H
+// union <unnamed> volatile __io _A_ADCSRA
+_A_ADCSRA:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,027H
+// union <unnamed> volatile __io _A_ADMUX
+_A_ADMUX:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,028H
+// union <unnamed> volatile __io _A_ACSR
+_A_ACSR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,029H
+// union <unnamed> volatile __io _A_UBRRL
+_A_UBRRL:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02aH
+// union <unnamed> volatile __io _A_UCSRB
+_A_UCSRB:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02bH
+// union <unnamed> volatile __io _A_UCSRA
+_A_UCSRA:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02cH
+// union <unnamed> volatile __io _A_UDR
+_A_UDR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02dH
+// union <unnamed> volatile __io _A_SPCR
+_A_SPCR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02eH
+// union <unnamed> volatile __io _A_SPSR
+_A_SPSR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,02fH
+// union <unnamed> volatile __io _A_SPDR
+_A_SPDR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,030H
+// union <unnamed> volatile __io _A_PIND
+_A_PIND:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,031H
+// union <unnamed> volatile __io _A_DDRD
+_A_DDRD:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,032H
+// union <unnamed> volatile __io _A_PORTD
+_A_PORTD:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,033H
+// union <unnamed> volatile __io _A_PINC
+_A_PINC:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,034H
+// union <unnamed> volatile __io _A_DDRC
+_A_DDRC:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,035H
+// union <unnamed> volatile __io _A_PORTC
+_A_PORTC:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,036H
+// union <unnamed> volatile __io _A_PINB
+_A_PINB:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,037H
+// union <unnamed> volatile __io _A_DDRB
+_A_DDRB:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,038H
+// union <unnamed> volatile __io _A_PORTB
+_A_PORTB:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,039H
+// union <unnamed> volatile __io _A_PINA
+_A_PINA:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,03aH
+// union <unnamed> volatile __io _A_DDRA
+_A_DDRA:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,03bH
+// union <unnamed> volatile __io _A_PORTA
+_A_PORTA:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,03cH
+// union <unnamed> volatile __io _A_EECR
+_A_EECR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:ROOT,03dH
+// union <unnamed> volatile __io _A_EEDR
+_A_EEDR:
+        DS 1
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01cH
+__?EECR:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01dH
+__?EEDR:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01eH
+__?EEARL:
+
+        ASEGN ABSOLUTE:DATA:NOROOT,01fH
+__?EEARH:
+
+        END
+//  177 
+//  178 
+//  179 #endif
+// 
+//  64 bytes in segment ABSOLUTE
+// 304 bytes in segment CODE
+// 
+// 304 bytes of CODE memory
+//   0 bytes of DATA memory (+ 64 bytes shared)
+//
+//Errors: none
+//Warnings: none

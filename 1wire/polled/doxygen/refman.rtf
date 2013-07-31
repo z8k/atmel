@@ -1,0 +1,1494 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\comment begin body}
+{\info 
+{\title {\comment Dallas 1-Wire(R) Master Polled driver Reference Manual AVR318 }Dallas 1-Wire(R) Master Polled driver}
+{\comment Generated byDoxgyen. }
+{\creatim \yr2004\mo8\dy19\hr16\min27\sec36}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt TITLE}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version AVR318\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt CREATEDATE}}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Dallas 1-Wire(R) Master Polled driver File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Dallas 1-Wire(R) Master Polled driver File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all documented files with brief descriptions:\par
+}
+{
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+\par
+{\b {\b main.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWIBitFunctions.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWIHighLevelFunctions.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWIHighLevelFunctions.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAD \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWIPolled.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWISWBitFunctions.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b OWIUARTBitFunctions.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAG \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par
+}\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Dallas 1-Wire(R) Master Polled driver File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+main.c File Reference\par \pard\plain 
+{\tc\tcl2 \v main.c}
+{\xe \v main.c}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b main.c} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Example on how to use the 1-Wire(R) interface master.\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+signed int {\b DS1820_ReadTemperature} (unsigned char bus, unsigned char *id)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Read the temperature from a DS1820 temperature sensor. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b DS2890_SetWiperPosition} (unsigned char position, unsigned char bus, unsigned char *id)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Set the wiper position of a DS2890. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+OWI_device * {\b FindFamily} (unsigned char familyID, OWI_device *devices, unsigned char size)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Find the first device of a family based on the family id. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b main} (void)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Example application for the polled drivers. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b SearchBuses} (OWI_device *devices, unsigned char len, unsigned char buses)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Perform a 1-Wire search. }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v DS1820_ReadTemperature\:main.c}
+{\xe \v main.c\:DS1820_ReadTemperature}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+signed int DS1820_ReadTemperature (unsigned char {\i bus}, unsigned char * {\i id})}
+}\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function will start a conversion and read back the temperature from a DS1820 temperature sensor.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i bus} A bitmask of the bus where the DS1820 is located.\par
+{\i id} The 64 bit identifier of the DS1820.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The 16 bit signed temperature read from the DS1820. \par
+}\par
+\par
+}
+{\xe \v DS2890_SetWiperPosition\:main.c}
+{\xe \v main.c\:DS2890_SetWiperPosition}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void DS2890_SetWiperPosition (unsigned char {\i position}, unsigned char {\i bus}, unsigned char * {\i id})}
+}\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function initializes the DS2890 by enabling the charge pump. It then changes the wiper position.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i position} The new wiper position.\par
+{\i bus} The bus where the DS2890 is connected.\par
+{\i id} The 64 bit identifier of the DS2890. \par
+}
+\par
+\par
+}
+{\xe \v FindFamily\:main.c}
+{\xe \v main.c\:FindFamily}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+OWI_device * FindFamily (unsigned char {\i familyID}, OWI_device * {\i devices}, unsigned char {\i size})}
+}\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function returns a pointer to a device in the device array that matches the specified family.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i familyID} The 8 bit family ID to search for.\par
+{\i devices} An array of devices to search through.\par
+{\i size} The size of the array 'devices'\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A pointer to a device of the family. \par
+}{\par
+{\b Return values:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i NULL} if no device of the family was found. \par
+}
+\par
+\par
+}
+{\xe \v main\:main.c}
+{\xe \v main.c\:main}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void main (void)}
+}\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Example application for the software only and polled UART driver. This example application will find all devices (upper bounded by MAX_DEVICES) on the buses defined by BUSES. It then tries to find either a DS1820 or DS2890 device on a bus, and communicate with them to read temperature (DS1820) or set wiper position (DS2890). This example is not written in a very optimal way. It is merely intended to show how the polled 1-Wire(R) driver can be used. \par
+\par
+}
+{\xe \v SearchBuses\:main.c}
+{\xe \v main.c\:SearchBuses}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char SearchBuses (OWI_device * {\i devices}, unsigned char {\i len}, unsigned char {\i buses})}
+}\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function shows how the OWI_SearchRom function can be used to discover all slaves on the bus. It will also CRC check the 64 bit identifiers.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i devices} Pointer to an array of type OWI_device. The discovered devices will be placed from the beginning of this array.\par
+{\i len} The length of the device array. (Max. number of elements).\par
+{\i buses} Bitmask of the buses to perform search on.\par
+}
+{\par
+{\b Return values:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i SEARCH_SUCCESSFUL} Search completed successfully. \par
+{\i SEARCH_CRC_ERROR} A CRC error occured. Probably because of noise during transmission. \par
+}
+\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWIBitFunctions.h File Reference\par \pard\plain 
+{\tc\tcl2 \v OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b OWIBitFunctions.h} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Header file for OWIBitFunctions.c\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_DetectPresence} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Send a Reset signal and listen for Presence signal. (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_DetectPresence} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Send a Reset signal and listen for Presence signal. (software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_Init} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Initialization of the one wire bus. (Polled UART driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_Init} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Initialization of the one wire bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReadBit} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Read a bit from the bus(es). (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReadBit} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Read a bit from the bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_TouchBit} (unsigned char outValue)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write and read one bit to/from the 1-Wire bus. (Polled UART driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit0} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '0' to the bus(es). (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit0} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '0' to the bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit1} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '1' bit to the bus(es). (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit1} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '1' bit to the bus(es). (Software only driver). }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v OWI_DetectPresence\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_DetectPresence}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_DetectPresence ()}
+}\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a Reset pulse on the 1-Wire(R) bus and listens for presence signals.\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a presence signal was detected. \par
+}\par
+\par
+}
+{\xe \v OWI_DetectPresence\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_DetectPresence}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_DetectPresence (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a Reset pulse on the 1-Wire(R) bus and listens for presence signals.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to send the Reset signal on.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a presence signal was detected. \par
+}\par
+\par
+}
+{\xe \v OWI_Init\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_Init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_Init ()}
+}\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function initializes the 1-Wire bus by configuring the UART. \par
+\par
+}
+{\xe \v OWI_Init\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_Init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_Init (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function initializes the 1-Wire bus(es) by releasing it and waiting until any presence sinals are finished.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to initialize. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReadBit\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_ReadBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReadBit ()}
+}\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The value read from the bus (0 or 1). \par
+}\par
+\par
+}
+{\xe \v OWI_ReadBit\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_ReadBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReadBit (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the bus(es) to read from.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a '1' was read. \par
+}\par
+\par
+}
+{\xe \v OWI_TouchBit\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_TouchBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_TouchBit (unsigned char {\i outValue})}
+}\par
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Writes one bit to the bus and returns the value read from the bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i outValue} The value to transmit on the bus.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The value received by the UART from the bus. \par
+}\par
+\par
+}
+{\xe \v OWI_WriteBit0\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_WriteBit0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit0 ()}
+}\par
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '0' bit on the 1-Wire(R) bus. \par
+\par
+}
+{\xe \v OWI_WriteBit0\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_WriteBit0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit0 (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '0' bit on the 1-Wire(R) bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to write to. \par
+}
+\par
+\par
+}
+{\xe \v OWI_WriteBit1\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_WriteBit1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit1 ()}
+}\par
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '1' bit on the 1-Wire bus. \par
+\par
+}
+{\xe \v OWI_WriteBit1\:OWIBitFunctions.h}
+{\xe \v OWIBitFunctions.h\:OWI_WriteBit1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit1 (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '1' bit on the 1-Wire bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to write to. \par
+}
+\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWIHighLevelFunctions.c File Reference\par \pard\plain 
+{\tc\tcl2 \v OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b OWIHighLevelFunctions.c} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: High level functions for transmission of full bytes on the 1-Wire(R) bus and implementations of ROM commands.\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_MatchRom} (unsigned char *romValue, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the MATCH ROM command and the ROM id to match against. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_ReadRom} (unsigned char *romValue, unsigned char pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the READ ROM command and reads back the ROM id. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReceiveByte} (unsigned char pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Receives one byte of data from the 1-Wire(R) bus. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_SearchRom} (unsigned char *bitPattern, unsigned char lastDeviation, unsigned char pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the SEARCH ROM command and returns 1 id found on the 1-Wire(R) bus. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_SendByte} (unsigned char data, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends one byte of data on the 1-Wire(R) bus(es). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_SkipRom} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the SKIP ROM command to the 1-Wire bus(es). }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v OWI_MatchRom\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_MatchRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_MatchRom (unsigned char * {\i romValue}, unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i romValue} A pointer to the ID to match against.\par
+{\i pins} A bitmask of the buses to perform the MATCH ROM command on. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReadRom\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_ReadRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_ReadRom (unsigned char * {\i romValue}, unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i romValue} A pointer where the id will be placed.\par
+{\i pin} A bitmask of the bus to read from. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReceiveByte\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_ReceiveByte}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReceiveByte (unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function automates the task of receiving a complete byte of data from the 1-Wire bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pin} A bitmask of the bus to read from.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The byte read from the bus. \par
+}\par
+\par
+}
+{\xe \v OWI_SearchRom\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_SearchRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_SearchRom (unsigned char * {\i bitPattern}, unsigned char {\i lastDeviation}, unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i bitPattern} A pointer to an 8 byte char array where the discovered identifier will be placed. When searching for several slaves, a copy of the last found identifier should be supplied in the array, or the search will fail.\par
+{\i lastDeviation} The bit position where the algorithm made a choice the last time it was run. This argument should be 0 when a search is initiated. Supplying the return argument of this function when calling repeatedly will go through the complete slave search.\par
+{\i pin} A bit-mask of the bus to perform a ROM search on.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The last bit position where there was a discrepancy between slave addresses the last time this function was run. Returns OWI_ROM_SEARCH_FAILED if an error was detected (e.g. a device was connected to the bus during the search), or OWI_ROM_SEARCH_FINISHED when there are no more devices to be discovered.\par
+}{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid See {\b main.c} for an example of how to utilize this function. \par
+}\par
+\par
+}
+{\xe \v OWI_SendByte\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_SendByte}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_SendByte (unsigned char {\i data}, unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function automates the task of sending a complete byte of data on the 1-Wire bus(es).\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i data} The data to send on the bus(es).\par
+{\i pins} A bitmask of the buses to send the data to. \par
+}
+\par
+\par
+}
+{\xe \v OWI_SkipRom\:OWIHighLevelFunctions.c}
+{\xe \v OWIHighLevelFunctions.c\:OWI_SkipRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_SkipRom (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to send the SKIP ROM command to. \par
+}
+\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWIHighLevelFunctions.h File Reference\par \pard\plain 
+{\tc\tcl2 \v OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h}
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b OWIHighLevelFunctions.h} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Header file for {\b OWIHighLevelFunctions.c}\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_MatchRom} (unsigned char *romValue, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the MATCH ROM command and the ROM id to match against. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_ReadRom} (unsigned char *romValue, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the READ ROM command and reads back the ROM id. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReceiveByte} (unsigned char pin)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Receives one byte of data from the 1-Wire(R) bus. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_SearchRom} (unsigned char *bitPattern, unsigned char lastDeviation, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the SEARCH ROM command and returns 1 id found on the 1-Wire(R) bus. }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_SendByte} (unsigned char data, unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends one byte of data on the 1-Wire(R) bus(es). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_SkipRom} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Sends the SKIP ROM command to the 1-Wire bus(es). }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v OWI_MatchRom\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_MatchRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_MatchRom (unsigned char * {\i romValue}, unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i romValue} A pointer to the ID to match against.\par
+{\i pins} A bitmask of the buses to perform the MATCH ROM command on. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReadRom\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_ReadRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_ReadRom (unsigned char * {\i romValue}, unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i romValue} A pointer where the id will be placed.\par
+{\i pin} A bitmask of the bus to read from. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReceiveByte\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_ReceiveByte}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReceiveByte (unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function automates the task of receiving a complete byte of data from the 1-Wire bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pin} A bitmask of the bus to read from.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The byte read from the bus. \par
+}\par
+\par
+}
+{\xe \v OWI_SearchRom\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_SearchRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_SearchRom (unsigned char * {\i bitPattern}, unsigned char {\i lastDeviation}, unsigned char {\i pin})}
+}\par
+{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i bitPattern} A pointer to an 8 byte char array where the discovered identifier will be placed. When searching for several slaves, a copy of the last found identifier should be supplied in the array, or the search will fail.\par
+{\i lastDeviation} The bit position where the algorithm made a choice the last time it was run. This argument should be 0 when a search is initiated. Supplying the return argument of this function when calling repeatedly will go through the complete slave search.\par
+{\i pin} A bit-mask of the bus to perform a ROM search on.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The last bit position where there was a discrepancy between slave addresses the last time this function was run. Returns OWI_ROM_SEARCH_FAILED if an error was detected (e.g. a device was connected to the bus during the search), or OWI_ROM_SEARCH_FINISHED when there are no more devices to be discovered.\par
+}{{\b \par
+Note:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid See {\b main.c} for an example of how to utilize this function. \par
+}\par
+\par
+}
+{\xe \v OWI_SendByte\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_SendByte}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_SendByte (unsigned char {\i data}, unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function automates the task of sending a complete byte of data on the 1-Wire bus(es).\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i data} The data to send on the bus(es).\par
+{\i pins} A bitmask of the buses to send the data to. \par
+}
+\par
+\par
+}
+{\xe \v OWI_SkipRom\:OWIHighLevelFunctions.h}
+{\xe \v OWIHighLevelFunctions.h\:OWI_SkipRom}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_SkipRom (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to send the SKIP ROM command to. \par
+}
+\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWIPolled.h File Reference\par \pard\plain 
+{\tc\tcl2 \v OWIPolled.h}
+{\xe \v OWIPolled.h}
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b OWIPolled.h} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Defines used in the polled 1-Wire(R) driver.\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWISWBitFunctions.c File Reference\par \pard\plain 
+{\tc\tcl2 \v OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c}
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: {\b OWISWBitFunctions.c} \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Polled software only implementation of the basic bit-level signalling in the 1-Wire(R) protocol.\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_DetectPresence} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Send a Reset signal and listen for Presence signal. (software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_Init} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Initialization of the one wire bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReadBit} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Read a bit from the bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit0} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '0' to the bus(es). (Software only driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit1} (unsigned char pins)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '1' bit to the bus(es). (Software only driver). }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v OWI_DetectPresence\:OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c\:OWI_DetectPresence}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_DetectPresence (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a Reset pulse on the 1-Wire(R) bus and listens for presence signals.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to send the Reset signal on.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a presence signal was detected. \par
+}\par
+\par
+}
+{\xe \v OWI_Init\:OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c\:OWI_Init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_Init (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function initializes the 1-Wire bus(es) by releasing it and waiting until any presence sinals are finished.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to initialize. \par
+}
+\par
+\par
+}
+{\xe \v OWI_ReadBit\:OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c\:OWI_ReadBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReadBit (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the bus(es) to read from.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a '1' was read. \par
+}\par
+\par
+}
+{\xe \v OWI_WriteBit0\:OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c\:OWI_WriteBit0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit0 (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '0' bit on the 1-Wire(R) bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to write to. \par
+}
+\par
+\par
+}
+{\xe \v OWI_WriteBit1\:OWISWBitFunctions.c}
+{\xe \v OWISWBitFunctions.c\:OWI_WriteBit1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit1 (unsigned char {\i pins})}
+}\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '1' bit on the 1-Wire bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i pins} A bitmask of the buses to write to. \par
+}
+\par
+\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+OWIUARTBitFunctions.c File Reference\par \pard\plain 
+{\tc\tcl2 \v OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c}
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+Atmel Corporation\par
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+File: OWIUARTFunctions.c \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Compiler: IAR EWAAVR 3.20a \par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Support mail: {\f2 avr@atmel.com}\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Supported devices: All AVRs.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Application Note: AVR318 - Dallas 1-Wire(R) master.\par
+}
+{
+\par\pard\plain \s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid 
+Description: Polled UART implementation of the basic bit-level signalling in the 1-Wire(R) protocol.\par
+}
+{{\b \par
+Revision}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 1.7 \par
+}{{\b \par
+Date}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid Thursday, August 19, 2004 14:27:18 UTC \par
+}\par
+{
+\pard\plain \s18\widctlpar\fs22\cgrid \par
+}
+\par
+}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_DetectPresence} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Send a Reset signal and listen for Presence signal. (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_Init} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Initialization of the one wire bus. (Polled UART driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_ReadBit} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Read a bit from the bus(es). (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+unsigned char {\b OWI_TouchBit} (unsigned char outValue)\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write and read one bit to/from the 1-Wire bus. (Polled UART driver). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit0} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '0' to the bus(es). (Polled UART DRIVER). }\par
+\par}
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b OWI_WriteBit1} ()\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i Write a '1' bit to the bus(es). (Polled UART DRIVER). }\par
+\par}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v OWI_DetectPresence\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_DetectPresence}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_DetectPresence ()}
+}\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a Reset pulse on the 1-Wire(R) bus and listens for presence signals.\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid A bitmask of the buses where a presence signal was detected. \par
+}\par
+\par
+}
+{\xe \v OWI_Init\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_Init}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_Init ()}
+}\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+This function initializes the 1-Wire bus by configuring the UART. \par
+\par
+}
+{\xe \v OWI_ReadBit\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_ReadBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_ReadBit ()}
+}\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for reception of a bit on the 1-Wire(R) bus(es).\par
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The value read from the bus (0 or 1). \par
+}\par
+\par
+}
+{\xe \v OWI_TouchBit\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_TouchBit}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+unsigned char OWI_TouchBit (unsigned char {\i outValue})}
+}\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Writes one bit to the bus and returns the value read from the bus.\par
+{\par
+{\b Parameters:}
+\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\i outValue} The value to transmit on the bus.\par
+}
+{{\b \par
+Returns:}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid The value received by the UART from the bus. \par
+}\par
+\par
+}
+{\xe \v OWI_WriteBit0\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_WriteBit0}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit0 ()}
+}\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '0' bit on the 1-Wire(R) bus. \par
+\par
+}
+{\xe \v OWI_WriteBit1\:OWIUARTBitFunctions.c}
+{\xe \v OWIUARTBitFunctions.c\:OWI_WriteBit1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void OWI_WriteBit1 ()}
+}\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+Generates the waveform for transmission of a '1' bit on the 1-Wire bus. \par
+\par
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}

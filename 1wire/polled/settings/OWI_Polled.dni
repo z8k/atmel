@@ -1,0 +1,33 @@
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[Watch]
+Watch 1=
+Watch 2=
+Watch 3=
+[CodeCoverage]
+State=_ 0
+[Profiling]
+State=_ 0
+[TermIOSettings]
+Filename=_ ""
+InputMode=_ 1
+[Desktop-Debug]
+Wnd0=_ "CallStack" "open" 44 0 1 -1 -1 -4 -23 0 600 198 887 1
+Wnd1=_ "Watch" "open" 44 0 1 -1 -1 -1 -1 911 235 1275 445 100 100 100 100
+Wnd2=_ "Terminal I/O" "open" 44 0 1 -1 -1 -1 -1 910 443 1275 701
+Wnd3=_ "Log" "open" 44 0 1 -1 -1 -1 -1 697 720 1275 911
+Wnd4=_ "Disassembly" "open" 44 0 1 -1 -1 -1 -1 545 0 910 701
+Wnd5=_ "Editor-DebugSource" "open" 44 0 1 -1 -1 -1 -1 198 0 696 887 "Z:\qvcs\AVR318 Dallas 1-wire Communication Interface\Source Code\IAR\polled\main.c" 1 1 0 141 6489 6489 0 162 6417 6417
+Wnd6=_ "Locals" "open" 44 0 1 -1 -1 -1 -1 911 0 1275 235 100 100 100 100
+Maximized=_ 0
+Count=_ 7
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
