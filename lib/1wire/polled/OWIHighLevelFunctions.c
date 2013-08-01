@@ -20,7 +20,7 @@
 *                         $Date: Thursday, August 19, 2004 14:27:18 UTC $
 ****************************************************************************/
 
-#include <ioavr.h>
+#include <avr/io.h>
 
 #include "OWIHighLevelFunctions.h"
 #include "OWIBitFunctions.h"
@@ -195,8 +195,7 @@ unsigned char OWI_SearchRom(unsigned char * bitPattern, unsigned char lastDeviat
         if (bitA && bitB)
         {
             // Both bits 1 (Error).
-            newDeviation = OWI_ROM_SEARCH_FAILED;
-            return;
+            return OWI_ROM_SEARCH_FAILED;
         }
         else if (bitA ^ bitB)
         {
@@ -263,4 +262,3 @@ unsigned char OWI_SearchRom(unsigned char * bitPattern, unsigned char lastDeviat
     }
     return newDeviation;
 }
-

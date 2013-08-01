@@ -21,7 +21,7 @@
 #ifndef _OWI_DEFS_H_
 #define _OWI_DEFS_H_
 
-#include <ioavr.h>
+#include <avr/io.h>
 
 
 /****************************************************************************

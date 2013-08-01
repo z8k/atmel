@@ -23,11 +23,22 @@
 
 #ifdef OWI_SOFTWARE_DRIVER
 
-#include <ioavr.h>
-#include <inavr.h>
+#include <avr/io.h>
+#include <util/delay.h>
+#include <stdint.h>
 
 #include "OWIBitFunctions.h"
 
+
+static inline uint8_t save_interrupt(void)
+{
+    return SREG;
+}
+
+static inline void restore_interrupt(uint8_t state)
+{
+    SREG = state;
+}
 
 /*! \brief Initialization of the one wire bus(es). (Software only driver)
  *  
@@ -42,7 +53,7 @@ void OWI_Init(unsigned char pins)
     // The first rising edge can be interpreted by a slave as the end of a
     // Reset pulse. Delay for the required reset recovery time (H) to be 
     // sure that the real reset is interpreted correctly.
-    __delay_cycles(OWI_DELAY_H_STD_MODE);
+    _delay_loop_2((OWI_DELAY_H_STD_MODE) / 4);
 }
 
 
@@ -55,22 +66,22 @@ void OWI_Init(unsigned char pins)
  */
 void OWI_WriteBit1(unsigned char pins)
 {
-    unsigned char intState;
+    uint8_t intState;
     
     // Disable interrupts.
-    intState = __save_interrupt();
-    __disable_interrupt();
+    intState = save_interrupt();
+//    __disable_interrupt();
     
     // Drive bus low and delay.
     OWI_PULL_BUS_LOW(pins);
-    __delay_cycles(OWI_DELAY_A_STD_MODE);
+    _delay_loop_2((OWI_DELAY_A_STD_MODE) / 4);
     
     // Release bus and delay.
     OWI_RELEASE_BUS(pins);
-    __delay_cycles(OWI_DELAY_B_STD_MODE);
+    _delay_loop_2((OWI_DELAY_B_STD_MODE) / 4);
     
     // Restore interrupts.
-    __restore_interrupt(intState);
+    restore_interrupt(intState);
 }
 
 
@@ -83,22 +94,22 @@ void OWI_WriteBit1(unsigned char pins)
  */
 void OWI_WriteBit0(unsigned char pins)
 {
-    unsigned char intState;
+    uint8_t intState;
     
     // Disable interrupts.
-    intState = __save_interrupt();
-    __disable_interrupt();
+    intState = save_interrupt();
+//    __disable_interrupt();
     
     // Drive bus low and delay.
     OWI_PULL_BUS_LOW(pins);
-    __delay_cycles(OWI_DELAY_C_STD_MODE);
+    _delay_loop_2((OWI_DELAY_C_STD_MODE) / 4);
     
     // Release bus and delay.
     OWI_RELEASE_BUS(pins);
-    __delay_cycles(OWI_DELAY_D_STD_MODE);
+    _delay_loop_2((OWI_DELAY_D_STD_MODE) / 4);
     
     // Restore interrupts.
-    __restore_interrupt(intState);
+    restore_interrupt(intState);
 }
 
 
@@ -112,27 +123,27 @@ void OWI_WriteBit0(unsigned char pins)
  */
 unsigned char OWI_ReadBit(unsigned char pins)
 {
-    unsigned char intState;
+    uint8_t intState;
     unsigned char bitsRead;
     
     // Disable interrupts.
-    intState = __save_interrupt();
-    __disable_interrupt();
+    intState = save_interrupt();
+//    __disable_interrupt();
     
     // Drive bus low and delay.
     OWI_PULL_BUS_LOW(pins);
-    __delay_cycles(OWI_DELAY_A_STD_MODE);
+    _delay_loop_2((OWI_DELAY_A_STD_MODE) / 4);
     
     // Release bus and delay.
     OWI_RELEASE_BUS(pins);
-    __delay_cycles(OWI_DELAY_E_STD_MODE);
+    _delay_loop_2((OWI_DELAY_E_STD_MODE) / 4);
     
     // Sample bus and delay.
     bitsRead = OWI_PIN & pins;
-    __delay_cycles(OWI_DELAY_F_STD_MODE);
+    _delay_loop_2((OWI_DELAY_F_STD_MODE) / 4);
     
     // Restore interrupts.
-    __restore_interrupt(intState);
+    restore_interrupt(intState);
     
     return bitsRead;
 }
@@ -150,27 +161,27 @@ unsigned char OWI_ReadBit(unsigned char pins)
  */
 unsigned char OWI_DetectPresence(unsigned char pins)
 {
-    unsigned char intState;
+    uint8_t intState;
     unsigned char presenceDetected;
     
     // Disable interrupts.
-    intState = __save_interrupt();
-    __disable_interrupt();
+    intState = save_interrupt();
+//    __disable_interrupt();
     
     // Drive bus low and delay.
     OWI_PULL_BUS_LOW(pins);
-    __delay_cycles(OWI_DELAY_H_STD_MODE);
+    _delay_loop_2((OWI_DELAY_H_STD_MODE) / 4);
     
     // Release bus and delay.
     OWI_RELEASE_BUS(pins);
-    __delay_cycles(OWI_DELAY_I_STD_MODE);
+    _delay_loop_2((OWI_DELAY_I_STD_MODE) / 4);
     
     // Sample bus to detect presence signal and delay.
     presenceDetected = ((~OWI_PIN) & pins);
-    __delay_cycles(OWI_DELAY_J_STD_MODE);
+    _delay_loop_2((OWI_DELAY_J_STD_MODE) / 4);
     
     // Restore interrupts.
-    __restore_interrupt(intState);
+    restore_interrupt(intState);
     
     return presenceDetected;
 }
