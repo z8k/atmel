@@ -6,3 +6,5 @@
 *.lst
 *.map
 *.sym
+
+.dep
