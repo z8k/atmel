@@ -1,0 +1,28 @@
+ATmega example, a two-channel min-max thermometer.
+
+Uses a Dallas/Maxim 1-wire temperature sensor for one channel ("outside"),
+an LM35 temperature sensor for the other channel ("inside"), and displays
+the readings on an HD44780-compatible LCD display, with a PWM-controlled
+backlight.
+
+The example is configured to use an ATmega328 at 16MHz; alter the
+Makefile and 1wire/polled/OWIPolled.h to change the target and clock frequency.
+Alter the Makefile to select a programming device to use with avrdude.
+
+IO connections:
+
+LCD data and control buses use Port D (see liblcd/lcd.h):
+LCD D4-D7	PD0-PD3
+RS			PD4
+RW			PD5
+E			PD6
+
+LCD backlight
+A	PB1
+K	GND
+
+1-Wire bus:	PB3 (see 1wire/polled/OWIPolled.h)
+
+LM35 out:	PC0
+
+PB2 is an input to light the LCD backlight.
