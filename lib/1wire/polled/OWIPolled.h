@@ -21,8 +21,8 @@
 #ifndef _OWI_POLLED_H_
 #define _OWI_POLLED_H_
 
-#include "..\common_files\OWIdefs.h"
-#include "..\common_files\OWIDeviceSpecific.h"
+#include "../common_files/OWIdefs.h"
+#include "../common_files/OWIDeviceSpecific.h"
 
 
 /*****************************************************************************

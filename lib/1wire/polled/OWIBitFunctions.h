@@ -21,7 +21,7 @@
 #ifndef _OWI_BIT_FUNCTIONS_H_
 #define _OWI_BIT_FUNCTIONS_H_
 
-#include "..\common_files\OWIdefs.h"
+#include "../common_files/OWIdefs.h"
 #include "OWIPolled.h"
 
 #ifdef OWI_SOFTWARE_DRIVER

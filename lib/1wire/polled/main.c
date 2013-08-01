@@ -25,7 +25,7 @@
 #include "OWIPolled.h"
 #include "OWIHighLevelFunctions.h"
 #include "OWIBitFunctions.h"
-#include "..\common_files\OWIcrc.h"
+#include "../common_files/OWIcrc.h"
 
 #include <string.h> // Used for memcpy.
 
