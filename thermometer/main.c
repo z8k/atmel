@@ -315,7 +315,6 @@ int main(void) {
 	}
 	
 	ds1820 = findDS1820();
-	//OWImain();
 	lcd_clrscr();
 	for (;;) {
 		adc = readADC(0);
@@ -363,7 +362,7 @@ int main(void) {
 				fadeUp();
 			}
 		} else if (backlight && ++onTime > 12) {
-			// Button not press, backlight on time elapsed. Switch it off.
+			// Button not pressed, and backlight on time elapsed. Switch it off.
 			onTime = 0;
 			backlight = false;
 			fadeDown();
