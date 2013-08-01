@@ -1,0 +1,5 @@
+Atmel application note AVR318 and source code, for controlling a Dallas/Maxim 1-Wire bus.
+
+License unknown, but freely available for download from Atmel:
+http://www.atmel.com/images/doc2579.pdf
+http://www.atmel.com/Images/AVR318.zip
